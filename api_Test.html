@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API TEST</title>
+</head>
+
+<body>
+    <input type="button" id="hw"/>
+    <script>
+        var hw = document.getElementById('hw');
+        var xhr = new XMLHttpRequest();
+        var url = 'http://openapi.q-net.or.kr/api/service/rest/InquiryListNationalQualifcationSVC/getList'; /*URL*/
+        var queryParams = '?ServiceKey=';
+        queryParams += '&serviceKey=ldY0vGslgEruKo%2FDYPpevsI8akCSFXkXlIRlGWyasEPBxKmb%2BijZu%2BPnB%2BnQGbNb4uymFpExVcf%2BP8zYb90LlQ%3D%3D';
+        xhr.open('GET', url + queryParams);
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                alert('Status: ' + this.status + '\nnHeaders: ' + JSON.stringify(this.getAllResponseHeaders()) + 'nBody: ' + this.responseText);
+            }
+        };
+        hw.addEventListener('click', function () {
+            return (xhr.send(''));
+        })</script>
+    
+</body>
+
+</html>
